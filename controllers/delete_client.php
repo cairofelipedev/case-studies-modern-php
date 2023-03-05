@@ -1,6 +1,5 @@
 <?php
-// Conectar ao banco de dados usando a classe PDO
-$pdo = new PDO('mysql:host=localhost;dbname=meubanco', 'root', 'root');
+require "../db_config.php";
 
 // Verificar se o ID do cliente foi enviado
 if (!empty($_GET['id'])) {
@@ -44,4 +43,3 @@ function excluirCliente($id) {
   $stmt->bindParam(':id', $id);
   $stmt->execute();
 }
-?>

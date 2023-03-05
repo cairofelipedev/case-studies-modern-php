@@ -1,6 +1,5 @@
 <?php
-// Conectar ao banco de dados usando a classe PDO
-$pdo = new PDO('mysql:host=localhost;dbname=meubanco', 'root', 'root');
+require "../db_config.php";
 
 // Verificar se o formulário foi enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -26,4 +25,3 @@ function criarCliente($nome, $email, $telefone) {
   $stmt->bindParam(':telefone', $telefone);
   $stmt->execute();
 }
-?>

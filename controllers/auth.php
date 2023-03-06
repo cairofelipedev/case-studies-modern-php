@@ -32,6 +32,13 @@ $_SESSION['id'] = $usuario['id'];
 $_SESSION['nome'] = $usuario['nome'];
 $_SESSION['email'] = $usuario['email'];
 
+$action = "login";
+$date_time = date('Y-m-d H:i:s');
+
+$sql_log = "INSERT INTO user_logs (user_id, action, date_time) VALUES (?, ?, ?)";
+$stmt = $pdo->prepare($sql_log);
+$result_log = $stmt->execute([$_SESSION['id'], $action, $date_time]);
+
 // Redireciona para a página de perfil do usuário
 header('Location: ../perfil.php');
 exit;

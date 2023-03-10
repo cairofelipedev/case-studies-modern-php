@@ -1,5 +1,5 @@
 <?php
-require "../db_config.php";
+require "db_config.php";
 
 // Obter a lista de clientes
 $clientes = obterClientes();
